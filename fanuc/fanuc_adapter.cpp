@@ -115,7 +115,7 @@ void FanucAdapter::gatherDeviceData()
     innerGatherDeviceData();
   }
 
-  catch(EXCEPTION_EXECUTE_HANDLER) {
+  catch(...) {
       gLogger->error("Unhandled structured exception occurred during gathering device data, disconnecting.");
       disconnect();
   }
